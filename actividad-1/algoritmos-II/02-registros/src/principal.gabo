@@ -1,0 +1,79 @@
+Algoritmo amorsh
+  Registro: Soltero1;
+    edad: Entero;
+    nombre, genero, orientacion: Cadena;
+    deporte, musica: Cadena;
+    b_lectura, b_viajar: Booleano;
+    extroversion: Real; // numero entre 0 y 1
+  Fin_Registro
+
+  Registro: Soltero2;
+    edad: Entero;
+    nombre, genero, orientacion: Cadena;
+    deporte, musica: Cadena;
+    b_lectura, b_viajar: Booleano;
+    extroversion: Real; // numero entre 0 y 1
+  Fin_Registro
+Inicio
+  var Soltero1: solt_1;
+  var Soltero2: solt_2;
+  var compatibilidad: Real;
+  var r: Booleano;
+
+  r = 1;
+
+  Mostrar << "¡Bienvenido a su calculadora de compatibilidad!";
+
+  Mientras (r = 1) Hacer;
+    cargar_data(
+      solt_1.edad,
+      solt_1.nombre,
+      solt_1.genero,
+      solt_1.orientacion,
+      solt_1.deporte,
+      solt_1.musica,
+      solt_1.b_lectura,
+      solt_1.b_viajar,
+      solt_1.extroversion,
+
+      solt_2.edad,
+      solt_2.nombre,
+      solt_2.genero,
+      solt_2.orientacion,
+      solt_2.deporte,
+      solt_2.musica,
+      solt_2.b_lectura,
+      solt_2.b_viajar,
+      solt_2.extroversion,
+    );
+    Mostrar << cargar_data;
+
+    compatibilidad = calcular_compatibilidad(
+      solt_1.edad,
+      solt_1.nombre,
+      solt_1.genero,
+      solt_1.orientacion,
+      solt_1.deporte,
+      solt_1.musica,
+      solt_1.b_lectura,
+      solt_1.b_viajar,
+      solt_1.extroversion,
+
+      solt_2.edad,
+      solt_2.nombre,
+      solt_2.genero,
+      solt_2.orientacion,
+      solt_2.deporte,
+      solt_2.musica,
+      solt_2.b_lectura,
+      solt_2.b_viajar,
+      solt_2.extroversion,
+    );
+
+    Mostrar << "La compatibilidad entre el/la soltero/a ", solt_1.nombre, "y el/la soltero/a ", solt_2.nombre; 
+    Mostrar << "Es del ", compatibilidad, "%";
+
+    Mostrar << "¿Desea calcular la compatibilidad de otros dos solteros?";
+    Leer >> r;
+  Fin_Mientras
+Fin

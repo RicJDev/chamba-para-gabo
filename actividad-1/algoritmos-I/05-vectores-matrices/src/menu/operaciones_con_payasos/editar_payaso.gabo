@@ -1,0 +1,90 @@
+Procedimiento editar_payaso(
+  E:
+  indice: Entero,
+
+  E/S:
+  payasos_nombres[cantidad],
+  payasos_especialidad[cantidad],
+  payasos_telefono[cantidad],
+  payasos_circo[cantidad]: Cadena,
+
+  E:
+  cantidad: Entero,
+);
+Inicio
+  var i, opc: Entero;
+  var nombre, especialidad, telefono, circo: Cadena;
+  var especialidades[20]: Cadena;
+  var en_uso, confirmar: Booleano;
+
+  especialidades[1] = "Malabares (con pelotas, aros, mazas, etc.)";
+  especialidades[2] = "Globoflexia (figuras con globos)";
+  especialidades[3] = "Magia cómica (trucos de magia con humor)";
+  especialidades[4] = "Zancos (caminar y actuar sobre zancos)";
+  especialidades[5] = "Monociclo (andar y hacer piruetas en monociclo)";
+  especialidades[6] = "Payaso de hospital (visitas terapéuticas)";
+  especialidades[7] = "Mímica (actuación sin palabras)";
+  especialidades[8] = "Comedia física / Slapstick (caídas, exageraciones)";
+  especialidades[9] = "Malabares con fuego (para espectáculos de riesgo)";
+  especialidades[10] = "Acrobacias (volteretas, pirámides humanas)";
+  especialidades[11] = "Equilibrio (sobre cuerdas, pelotas, etc.)";
+  especialidades[12] = "Marionetas o ventriloquía (manejo de títeres)";
+  especialidades[13] = "Pintura de caras (maquillaje artístico para niños)";
+  especialidades[14] = "Cuentacuentos (narrar historias con gracia)";
+  especialidades[15] = "Música cómica (tocar instrumentos de forma divertida)";
+  especialidades[16] = "Improvisación (interactuar con el público sin guion)";
+  especialidades[17] = "Payaso de rodeo (actuaciones con animales, si aplica)";
+  especialidades[18] = "Payaso de circo tradicional (estilo clásico con maquillaje y vestuario)";
+  especialidades[19] = "Bailes divertidos (coreografías graciosas)";
+  especialidades[20] = "Interacción con el público (juegos, bromas, participación)";
+
+  Mostrar << "Ingrese el nombre del payaso. ";
+  Leer >> nombre;
+  en_uso = esta_en_uso(nombre, payasos_nombres[cantidad], cantidad);
+
+  Mientras (en_uso = 1) Hacer;
+    Mostrar << "Ese nombre ya existe. Los payasos deben tener un nombre unico. ";
+    Leer >> nombre;
+    en_uso = esta_en_uso(nombre, payasos_nombres[cantidad], cantidad);
+  Fin_Mientras
+
+  Mostrar << "Ingrese el telefono del payaso. ";
+  Leer >> telefono;
+  Mostrar << "Ingrese el circo contratante. ";
+  Leer >> circo;
+  Mostrar << "Seleccione una de las siguientes especialidades para su payaso: ";
+  Para (i = 1 Hasta i = 20) Hacer;
+    Mostrar << "- ", i, ". ", especialidades[i];
+  Fin_Para
+  Leer >> opc;
+
+  Mientras (opc < 1 Or opc > 20) Hacer;
+    Mostrar << "Esa especialidad no existe. Elija una: ";
+    Para (i = 1 Hasta i = 20) Hacer;
+      Mostrar << "- ", i, ". ", especialidades[i];
+    Fin_Para
+    Leer >> opc;
+  Fin_Mientras
+
+  especialidad = especialidades[opc];
+
+  Mostrar << "Estos son los nuevos datos del payaso: ";
+  Mostrar << "Nombre del payaso: ", nombres;
+  Mostrar << "Especialidad del payaso: ", especialidad;
+  Mostrar << "Número de telefono del payaso: ", telefono;
+  Mostrar << "Circo contratante: ", circo;
+
+  Mostrar << "¿Confirmas los cambios? (1: sí, 0: no)";
+  Leer >> confirmar;
+
+  Si (confirmar = 1) Entonces;
+    Mostrar << "Cambios aplicados, mi rey. ";
+    payasos_nombres[indice] = nombre;
+    payasos_especialidad[indice] = especialidad;
+    payasos_telefono[indice] = telefono;
+    payasos_circo[indice] = circo;
+
+    Sino
+      Mostrar << "¡No se han aplicado los cambios! ";
+  Fin_Si
+Fin_Procedimiento

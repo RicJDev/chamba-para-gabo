@@ -1,0 +1,8 @@
+Procedimiento opciones();
+Inicio
+  Mostrar << "1. Agregar un nuevo payaso";
+  Mostrar << "2. Ver la información de un payaso";
+  Mostrar << "3. Matar a un payaso (eliminarlo de la agenda nomá)";
+  Mostrar << "4. Editar la información de un payaso";
+  Mostrar << "5. Salir";
+Fin_Procedimiento

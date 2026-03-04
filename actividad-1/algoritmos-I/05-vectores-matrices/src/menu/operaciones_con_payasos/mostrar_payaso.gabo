@@ -1,0 +1,15 @@
+Procedimiento mostrar_payaso(
+  E:
+  indice: Entero,
+  payasos_nombres[cantidad],
+  payasos_especialidad[cantidad],
+  payasos_telefono[cantidad],
+  payasos_circo[cantidad]: Cadena,
+  cantidad: Entero,
+);
+Inicio
+  Mostrar << "Nombre del payaso: ", payasos_nombres[indice];
+  Mostrar << "Especialidad del payaso: ", payasos_especialidad[indice];
+  Mostrar << "Número de telefono del payaso: ", payasos_telefono[indice];
+  Mostrar << "Circo contratante: ", payasos_circo[indice];
+Fin_Procedimiento

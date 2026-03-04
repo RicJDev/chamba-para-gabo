@@ -1,0 +1,41 @@
+Procedimiento matar_payaso(
+  E:
+  indice: Entero,
+
+  E/S:
+  payasos_nombres[cantidad],
+  payasos_especialidad[cantidad],
+  payasos_telefono[cantidad],
+  payasos_circo[cantidad]: Cadena,
+
+  E:
+  cantidad: Entero,
+);
+Inicio
+  var confirmar: Booleano;
+
+  Mostrar << "Este es el payaso cuyo sacrificio de sangre liberará tu disco duro: ";
+  mostrar_payaso(
+    indice,
+    payasos_nombres[cantidad],
+    payasos_especialidad[cantidad],
+    payasos_telefono[cantidad],
+    payasos_circo[cantidad],
+    cantidad,
+  );
+
+  Mostrar << "¿Seguro que quieres acabar con su miserable y cómica vida?. (1: sí, 0: no) ";
+  Leer >> confirmar;
+
+  Si (confirmar = 1) Entonces;
+    Mostrar << "El payaso ha sido eliminado. ";
+
+    payasos_nombres[indice] = "no-asignado";
+    payasos_especialidad[indice] = "no-asignado";
+    payasos_telefono[indice] = "no-asignado";
+    payasos_circo[indice] = "no-asignado";
+
+    Sino
+      Mostrar << "El payaso vivirá... un día más. ";
+  Fin_Si
+Fin_Procedimiento

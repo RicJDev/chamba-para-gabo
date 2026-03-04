@@ -1,0 +1,8 @@
+Funcion calcular_compatibilidad(
+
+): Real;
+Inicio
+  var resultado = 0: Real;
+
+  Devolver(resultado);
+Fin_Funcion

@@ -1,0 +1,26 @@
+Algoritmo payasos circenses
+Inicio
+  var payasos_nombres[cantidad],
+      payasos_especialidad[cantidad],
+      payasos_telefono[cantidad],
+      payasos_circo[cantidad]: Cadena;
+  var cantidad: Entero;
+
+  cantidad = 500;
+  init_payasos(
+    payasos_nombres[cantidad],
+    payasos_especialidad[cantidad],
+    payasos_telefono[cantidad],
+    payasos_circo[cantidad],
+    cantidad,
+  );
+
+  menu(
+    payasos_nombres[cantidad],
+    payasos_especialidad[cantidad],
+    payasos_telefono[cantidad],
+    payasos_circo[cantidad],
+    cantidad,
+  );
+  Mostrar << menu;
+Fin

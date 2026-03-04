@@ -1,0 +1,20 @@
+Procedimiento init_payasos(
+  E/S:
+  payasos_nombres[cantidad],
+  payasos_especialidad[cantidad],
+  payasos_telefono[cantidad],
+  payasos_circo[cantidad]: Cadena,
+
+  E:
+  cantidad: Entero,
+);
+Inicio
+  var i: Entero;
+
+  Para (i = 1 Hasta i = cantidad) Hacer;
+    payasos_nombres[i] = "no-asignado";
+    payasos_especialidad[i] = "no-asignado";
+    payasos_telefono[i] = "no-asignado";
+    payasos_circo[i] = "no-asignado";
+  Fin_Para
+Fin_Procedimiento

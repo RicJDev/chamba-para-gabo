@@ -1,0 +1,98 @@
+Procedimiento menu(
+  E/S:
+  payasos_nombres[cantidad],
+  payasos_especialidad[cantidad],
+  payasos_telefono[cantidad],
+  payasos_circo[cantidad]: Cadena,
+
+  E:
+  cantidad: Entero,
+);
+Inicio
+  var opcion, indice: Entero;
+  var nombre: Cadena;
+
+  opcion = 0;
+
+  Mientras (opcion != 5) Hacer;
+    Mostrar << "¡Bienvenido a su agenda de payasos! ¿Qué le gustaría hacer? ";
+    opciones();
+    Mostrar << opciones;
+    Leer >> opcion;
+
+    Mientras (opcion < 1 Or opcion > 5) Hacer;
+      Mostrar << "Nah, nah. Esa opcion no existe. Intenta otra vez.";
+      opciones();
+      Mostrar << opciones;
+      Leer >> opcion;
+    Fin_Mientras
+
+    En_Caso (opcion > 0) Sea;
+      Caso(opcion = 1);
+        crear_payaso(
+          payasos_nombres[cantidad],
+          payasos_especialidad[cantidad],
+          payasos_telefono[cantidad],
+          payasos_circo[cantidad],
+          cantidad,
+        );
+        Mostrar << crear_payaso;
+      Caso(opcion = 2);
+        Mostrar << "Ingrese el nombre del payaso a buscar. ";
+        Leer >> nombre;
+
+        indice = buscar_payaso(nombre, payasos_nombres[cantidad], cantidad);
+        Si (indice = -1) Entonces;
+          Mostrar << "Payaso no encontrado";
+          Sino
+            mostrar_payaso(
+              indice,
+              payasos_nombres[cantidad],
+              payasos_especialidad[cantidad],
+              payasos_telefono[cantidad],
+              payasos_circo[cantidad],
+              cantidad,
+            );
+            Mostrar << mostrar_payaso;
+        Fin_Si
+      Caso(opcion = 3);
+        Mostrar << "Ingrese el nombre del payaso a matar. ";
+        Leer >> nombre;
+
+        indice = buscar_payaso(nombre, payasos_nombres[cantidad], cantidad);
+        Si (indice = -1) Entonces;
+          Mostrar << "Payaso no encontrado";
+          Sino
+            matar_payaso(
+              indice,
+              payasos_nombres[cantidad],
+              payasos_especialidad[cantidad],
+              payasos_telefono[cantidad],
+              payasos_circo[cantidad],
+              cantidad,
+            );
+            Mostrar << matar_payaso;
+        Fin_Si
+      Caso(opcion = 4);
+        Mostrar << "Ingrese el nombre del payaso a editar. ";
+        Leer >> nombre;
+
+        indice = buscar_payaso(nombre, payasos_nombres[cantidad], cantidad);
+        Si (indice = -1) Entonces;
+          Mostrar << "Payaso no encontrado";
+          Sino
+            editar_payaso(
+              indice,
+              payasos_nombres[cantidad],
+              payasos_especialidad[cantidad],
+              payasos_telefono[cantidad],
+              payasos_circo[cantidad],
+              cantidad,
+            );
+            Mostrar << editar_payaso;
+        Fin_Si
+      Otro_Caso
+        Mostrar << "Bye, bye, Hawaii!";
+    Fin_Caso
+  Fin_Mientras
+Fin_Procedimiento

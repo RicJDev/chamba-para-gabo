@@ -1,0 +1,12 @@
+Funcion buscar_payaso(nombre, payasos_nombres[cantidad], cantidad): Entero;
+Inicio
+  var indice = -1, i: Entero;
+
+  Para (i = 1 Hasta i = cantidad) Hacer;
+    Si (nombre = payasos_nombres[i]) Entonces;
+      indice = i;
+    Fin_Si
+  Fin_Para
+
+  Devolver(indice);
+Fin_Funcion
